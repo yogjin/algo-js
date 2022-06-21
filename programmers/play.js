@@ -26,3 +26,22 @@ for (let i of arr) {
   vis.add(i);
 }
 ans.length > 0 ? console.log(ans) : console.log([-1]);
+
+// 방법 2: Map, forEach 이용
+const arr2 = [1, 2, 3, 3, 3, 3, 4, 4];
+const map = new Map();
+
+arr2.forEach((x) => {
+  if (map.has(x)) {
+    map.set(x, map.get(x) + 1);
+  } else {
+    map.set(x, 1);
+  }
+});
+const ans2 = [];
+
+map.forEach((value) => {
+  if (value > 1) ans2.push(value);
+});
+
+console.log(ans2);
