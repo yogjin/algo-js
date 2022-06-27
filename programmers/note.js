@@ -48,6 +48,19 @@ console.log(a, b); // 3 7
 console.log(a, b); // 7 3
 
 // 5. 정수 판별
+const int123 = 123;
+const str123 = '123ㅁ';
+
+console.log(Number.isInteger(int123)); // true
+console.log(Number.isInteger(str123)); // false
+
+function isInteger(a) {
+  console.log('파라미터', a * 2);
+  return a % 1 === 0 ? true : false;
+}
+
+console.log(isInteger(int123)); // true
+console.log(isInteger(str123)); // false
 
 // 6. string 접근
 // string.charAt과 index접근
@@ -65,6 +78,10 @@ console.log(Math.pow(x, y)); // 1024
 console.log(x ** y); // 1024
 
 // 8. 진법 변환
+const eight = 8;
+const binaryEight = eight.toString(2);
+console.log(binaryEight); // 1000 (string)
+console.log(parseInt(binaryEight, 2)); // 8 (number);
 
 // 9. Object, Array, Map 정리
 
