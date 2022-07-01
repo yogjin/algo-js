@@ -78,3 +78,24 @@ console.log(parseInt(binaryEight, 2)); // 8 (number);
 // 9. Object, Array, Map 정리
 
 // 10. Regex
+
+// 11. 다중집합
+// 다중 교집합 구하기
+let arr1 = [1, 2, 2, 3, 4, 5];
+let arr2 = [1, 1, 2, 3, 4, 6];
+const intersection = [];
+arr1.forEach((str) => {
+  if (arr2.includes(str)) {
+    delete arr2[arr2.indexOf(str)];
+    intersection.push(str);
+  }
+});
+console.log(intersection); // [ 1, 2, 3, 4 ]
+console.log('arr1:', arr1, 'arr2:', arr2); // arr1: [ 1, 2, 2, 3, 4, 5 ] arr2: [ <1 empty item>, 1, <3 empty items>, 6 ]
+
+// 다중 합집합
+// arr1 + arr2 - 교집합
+const union = [...arr1, ...arr2]
+  .filter((x) => x !== undefined)
+  .sort((a, b) => a - b);
+console.log(union); // [ 1, 1, 2, 2, 3, 4, 5, 6 ]
