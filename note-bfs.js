@@ -32,3 +32,21 @@ function solution(maps) {
   const ans = dist[col - 1][row - 1];
   return ans > 0 ? ans : -1;
 }
+
+// 2. visited 배열선언
+// 1차원
+let vis = new Array(n + 1).fill(false);
+// 2차원
+const col = graph.length;
+const row = graph.length;
+let vis = new Array(col).fill().map(() => new Array(row).fill(false));
+
+// 3. 인접리스트용 배열 선언
+const nodeCount = 10;
+let map = new Array(nodeCount).fill(0).map(() => []);
+/*
+[
+  [], [], [], [], [],
+  [], [], [], [], []
+]
+*/
