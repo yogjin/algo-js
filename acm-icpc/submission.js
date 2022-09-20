@@ -1,10 +1,7 @@
 // 여러 줄 입력
 // 백준 제출 때는 input 링크를 /dev/stdin 로 설정
 let fs = require('fs');
-let input = fs
-  .readFileSync(__dirname + '/test-case.txt')
-  .toString()
-  .split('\n');
+let input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
 let count = input[0];
 let numbers = [];
